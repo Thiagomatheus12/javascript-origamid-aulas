@@ -1,56 +1,26 @@
-function areaQuadrado(lado) {
-    return lado * lado;
-}
-
-console.log(areaQuadrado(2))
-
-function pi() {
-    return 3.14;
-}
-
-var total = 5 * pi();
-console.log(total)
-
-function imc(peso, altura) {
-    const imc = peso / (altura * altura);
-    return imc;
-}
-
-console.log(imc(80, 1.8));
-
-function corFavorita(cor) {
-    if (cor === 'azul') {
-        return 'Eu gosto do céu'
-    } else if (cor === 'verde') {
-        return 'Eu gosto do mato'
-    } else {
-        return 'Eu não gosto de cor'
-    }
-}
-
-console.log(corFavorita('verde'));
-
-addEventListener('click', function () {
-    console.log('olá')
-});
-
-function terceiraIdade(idade) {
-    console.log(typeof idade)
-    if (typeof idade !== 'number') {
-        return 'Por favor preencha um número'
-    } else if (idade >= 60) {
-        return true
-    } else {
-        return false
-    }
-}
-
-console.log(terceiraIdade(30));
+var x = 5;
+var y = 10;
+x += y; //x = x + y (15)
+x -= y; //x = x - y (-5)
+x *= y; //x = x * y (50)
+x /= y; //x = x / y (0.5)
+x %= y; //x = x % y (0)
+x **= y; //x = x ** y (9765625)
 
 
-function faltaVisitar(paisesVisitados) {
-    var totalpaises = 193;
-    return `Falta visitar ${totalpaises - paisesVisitados} paises`
-}
+//Operador Ternário
+var idade = 19
+var naoPossuiDiabetes = false
+//Condição ? true : false;
+var podeBeber = (idade >= 18 && naoPossuiDiabetes) ? 'Pode beber' : 'Não pode beber';
+console.log(podeBeber);
 
-console.log(faltaVisitar(10))
+var possuiFaculdade = true;
+if (possuiFaculdade) console.log('possui faculdade');
+else console.log('Não possui faculdade')
+
+//Ou
+if (possuiFaculdade)
+    console.log('possui faculdade');
+else
+    console.log('Não possui faculdade')
