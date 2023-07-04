@@ -69,7 +69,7 @@ initScrollSuave()
 function initAnimacaoScroll() {
   const sections = document.querySelectorAll('.jsScroll')
   if (sections.length) {
-    const windowMetade = window.innerHeight * 0.5;
+    const windowMetade = window.innerHeight * 0.1;
 
     function animaScroll() {
       sections.forEach((section) => {
