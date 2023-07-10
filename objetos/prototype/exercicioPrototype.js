@@ -1,44 +1,34 @@
-//Transforme o objeto abaixo em uma Constructor Function
-// const pessoa = {
-//   nome: 'Nome pessoa',
-//   idade: 0,
-//   andar() {
-//     console.log(this.nome + ' Andou');
-//   }
-// }
+//Crie uma função construtora de Pessoas, deve conter nome, sobrenome e idade
+//Crie um método no protótipo que retorne o nome completo da pessoa
 
-function Pessoa(nome, idade) {
-  this.nome = nome;
-  this.idade = idade;
-  this.andar = function() {
-    console.log(this.nome + ' Andou');
-  }
+function Person(name, surname, age) {
+  this.name = name;
+  this.surname = surname;
+  this.age = age;
 }
-
-//Crie 3 pessoas, João - 20 anos, Maria - 25 anos, Bruno - 15 anos.
-const joao = new Pessoa('João', 20)
-const maria = new Pessoa('Maria', 25)
-const bruno = new Pessoa('Bruno', 15) 
-
-// Crie uma Constructor Function (Dom) para manipulação de listas de elementos do dom. Deve conter as seguintes propriedades e métodos
-//elements, retorna NodeList com os elementos selecionados
-//addClass(classe), adiciona a classe a todos os elementos
-//removeClass(classe), remove a classe de todos os elementos
-function Dom(seletor) {
-  const elementList = document.querySelectorAll(seletor);
-  this.elements = elementList;
-  this.addClass = function(classe) {
-    elementList.forEach((element) => {
-      element.classList.add(classe)
-    })
-  }
-  this.removeClass = function(classe) {
-    elementList.forEach((element) => {
-      element.classList.remove(classe)
-    })
-  }
+Person.prototype.fullName = function() {
+  return `${this.name} ${this.surname}`
 }
+const thiago = new Person('Thiago', 'Matheus')
+console.log(thiago.fullName())
 
-const listaItens = new Dom('li')
-listaItens.addClass('ativo')
-listaItens.removeClass('ativo')
+
+//Liste os métodos acessados por dados criados com NodeList, HTMLColection, Document
+Object.getOwnPropertyNames(NodeList.prototype)
+Object.getOwnPropertyNames(HTMLCollection.prototype)
+Object.getOwnPropertyNames(Document.prototype)
+
+//Liste os construtores dos dados abaixo
+const li = document.querySelector('li')
+
+li; 
+li.constructor.name //HTMLLIElement
+li.click; //Function
+li.innerText //String
+li.value //Number
+li.hidden //Boolean
+li.offsetLeft //Number
+li.click() //Undefined
+
+//Qual o construtor do dado abaixo
+li.hidden.constructor.name //String
