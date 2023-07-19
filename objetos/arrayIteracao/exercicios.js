@@ -52,10 +52,17 @@ const shopping = [
     price: 'R$ 5,35'
   },
   {
-    item: 'Quejo',
+    item: 'Queijo',
     price: 'R$ 10,60'
   }
 ]
+
+// function hasCheese(shoppingCart) {
+//   return console.log(shoppingCart.some((product) => product.item === 'Queijo'))
+// }
+
+// hasCheese(shopping)
+
 
 // const cleanArray = shopping.map((item) => {
 //   item = +item.price.toUpperCase().replace('R$', '').trim().replace(',', '.')
